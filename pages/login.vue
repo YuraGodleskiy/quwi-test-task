@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <section class="login-section">
     <LoginForm />
-  </div>
+  </section>
 </template>
 
 <script>

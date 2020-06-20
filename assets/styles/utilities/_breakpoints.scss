@@ -19,7 +19,7 @@ $breakpoints: (
 @mixin breakpoint-min($breakpoint) {
   @if map-has-key($breakpoints, $breakpoint) {
     $val: map-get($breakpoints, $breakpoint) - 1px;
-    @media (min-width: rem( $val )) {
+    @media (min-width: $val) {
       @content;
     }
   } @else {
@@ -31,7 +31,7 @@ $breakpoints: (
 @mixin breakpoint-max($breakpoint) {
   @if map-has-key($breakpoints, $breakpoint) {
     $val: map-get($breakpoints, $breakpoint) - 1px;
-    @media (max-width: rem( $val )) {
+    @media (max-width: $val) {
       @content;
     }
   } @else {
