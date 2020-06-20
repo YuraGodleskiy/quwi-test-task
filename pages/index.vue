@@ -16,6 +16,7 @@
 <script>
 
 export default {
+  middleware: 'authenticated',
   async created () {
     console.log(this.$auth.loggedIn)
     if (this.$auth.loggedIn) {
@@ -24,8 +25,9 @@ export default {
     }
   },
   methods: {
-    logoutUser () {
-      this.$auth.logout()
+    async logoutUser () {
+      await this.$auth.logout()
+      await this.$router.push('login')
     }
   }
 }
