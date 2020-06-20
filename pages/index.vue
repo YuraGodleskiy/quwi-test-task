@@ -1,6 +1,8 @@
 <template>
   <div>
-    index
+    <span class="asd">
+      index
+    </span>
     <button
       v-if="$auth.loggedIn"
       @click="logoutUser"

@@ -1,0 +1,13 @@
+.navbar {
+  background: $light-grey;
+  box-shadow: 0 0 5px rgba(0,0,0,.25);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2%;
+  @include slide-animation(0, -100%, 1s);
+  &__logo {
+    width: 25px;
+    margin: 10px 0;
+  }
+}

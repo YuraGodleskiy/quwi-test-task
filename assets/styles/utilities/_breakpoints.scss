@@ -1,0 +1,41 @@
+$xs: 600px;
+$sm: 960px;
+$md: 1264px;
+$lg: 1904px;
+
+$breakpoints: (
+  xs: 0,
+  sm: 600px,
+  sm-support: 760px,
+  md: 960px,
+  lg: 1264px,
+  xl: 1904px
+) !default;
+// ==========================================================================
+// Breakpoints
+// Usage: @include brakpoint-min('xs')
+// ==========================================================================
+
+@mixin breakpoint-min($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $val: map-get($breakpoints, $breakpoint) - 1px;
+    @media (min-width: rem( $val )) {
+      @content;
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+  }
+}
+
+@mixin breakpoint-max($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $val: map-get($breakpoints, $breakpoint) - 1px;
+    @media (max-width: rem( $val )) {
+      @content;
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+  }
+}
