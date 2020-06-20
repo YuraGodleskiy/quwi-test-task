@@ -1,13 +1,13 @@
-@mixin slide-animation($x,$y,$delay) {
+@mixin slide-animation($x,$y,$delay, $name) {
     animation-delay: $delay;
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
     -webkit-animation-name: slide;
-    animation-name: slide;
+    animation-name: $name+'-animation';
 
-  @-webkit-keyframes slide {
+  @-webkit-keyframes #{$name+'-animation'} {
     0% {
       -webkit-transform: translate3d($x, $y, 0);
       transform: translate3d($x, $y, 0);
@@ -19,7 +19,7 @@
     }
   }
 
-  @keyframes slide {
+  @keyframes #{$name+'-animation'} {
     0% {
       -webkit-transform: translate3d($x, $y, 0);
       transform: translate3d($x, $y, 0);
