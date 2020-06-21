@@ -8,25 +8,33 @@
       :spent-time-week="item.spent_time_week"
       :spent-time-month="item.spent_time_month"
       :spent-time-all="item.spent_time_all"
+      :id="item.id"
     />
   </section>
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex'
 import ProjectItem from '@/components/projects/ProjectItem'
 export default {
-  middleware: 'authenticated',
+  middleware: 'redirectToLogin',
   components: {
     ProjectItem
   },
   data: () => ({
-    projects: []
   }),
-  async asyncData ({ $axios }) {
-    const { data } = await $axios.get('projects-manage/index')
-    return {
-      projects: data.projects
-    }
+  computed: {
+    ...mapState({
+      projects: state => state.projects.projects
+    })
+  },
+  created () {
+    this.getProjects()
+  },
+  methods: {
+    ...mapActions({
+      getProjects: 'projects/getProjects'
+    })
   }
 }
 </script>

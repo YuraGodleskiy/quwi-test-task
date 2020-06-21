@@ -1,5 +1,14 @@
 <template>
-  <div class="project-item">
+  <nuxt-link
+    :to="{
+      name: 'edit-id',
+      params: {
+        id: id,
+        redirect: true
+      }
+    }"
+    class="project-item"
+  >
     <img :src="logo ? logo : defaultLogo" :alt="title" class="project-item__logo">
     <b class="project-item__title">
       {{ title }}
@@ -33,10 +42,11 @@
         </b>
       </div>
     </div>
-  </div>
+  </nuxt-link>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import defaultLogo from '@/assets/images/general/defaultLogo.png'
 export default {
   name: 'ProjectItem',
@@ -64,12 +74,19 @@ export default {
     spentTimeAll: {
       type: Number,
       default: 0
+    },
+    id: {
+      type: Number,
+      default: 0
     }
   },
   data: () => ({
     defaultLogo
   }),
   computed: {
+    ...mapState({
+      projects: state => state.projects.projects
+    }),
     isActiveRes () {
       return this.isActive ? 'Active' : 'Not active'
     },

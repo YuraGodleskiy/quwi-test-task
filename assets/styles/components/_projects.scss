@@ -3,8 +3,9 @@
   height: calc(100vh - 45px);
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  padding-top: 10px;
+  @include slide-animation(0,100vh, 0.5s, login-form);
 }
 .project-item {
   margin: 5px 0;
@@ -16,6 +17,8 @@
   border: 1px solid $grey;
   border-radius: 3px;
   padding: 25px;
+  text-decoration: none;
+  color: $black;
   @include breakpoint-min(sm) {
     flex-direction: row;
   }

@@ -1,21 +1,21 @@
 <template>
-  <form @submit.prevent="loginUser" class="login-form">
-    <h4 class="login-form__title">
+  <form @submit.prevent="loginUser" class="form">
+    <h4 class="form__title">
       login
     </h4>
     <input
       v-model="form.email"
-      class="login-form__text-field"
-      type="text"
+      class="form__text-field"
+      type="email"
       placeholder="Email"
     >
     <input
       v-model="form.password"
-      class="login-form__text-field"
+      class="form__text-field"
       type="password"
       placeholder="Password"
     >
-    <button type="submit" class="login-form__btn">
+    <button type="submit" class="form__btn">
       Login
     </button>
   </form>

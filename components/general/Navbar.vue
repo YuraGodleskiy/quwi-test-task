@@ -7,7 +7,7 @@
     >
     <nav class="navbar-btns">
       <div v-if="this.$auth.loggedIn">
-        <nuxt-link to="" class="navbar__btn">
+        <nuxt-link to="/" class="navbar__btn">
           projects
         </nuxt-link>
         <button @click="logoutUser" class="navbar__btn">
