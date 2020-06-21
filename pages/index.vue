@@ -2,6 +2,7 @@
   <section class="projects-section">
     <ProjectItem
       v-for="item in projects"
+      :key="item.id"
       :logo="item.logo_url"
       :title="item.name"
       :is-active="!!item.is_active"

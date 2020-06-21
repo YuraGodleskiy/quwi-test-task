@@ -52,8 +52,19 @@
       background: #447ba8;
     }
   }
+  &__input-wrapper {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
   &__notification {
     width: 100%;
     text-align: center;
+  }
+  &__error {
+    color: $red;
+    width: 100%;
+    text-align: center;
+    margin: 10px 0 0 0;
   }
 }

@@ -82,6 +82,9 @@ export default {
   ** Build configuration
   */
   build: {
+    transpile: [
+      'vee-validate'
+    ],
     /*
     ** You can extend webpack config here
     */
