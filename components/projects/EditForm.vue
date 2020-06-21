@@ -1,7 +1,7 @@
 <template>
   <form @submit.prevent="saveInfo" class="form">
     <h4 class="form__title">
-      Edit name of project
+      Edit project
     </h4>
     <img v-if="form.logo_url" :src="form.logo_url" alt="logo" class="form__logo">
     <img v-else :src="defaultLogo" alt="logo" class="form__logo">

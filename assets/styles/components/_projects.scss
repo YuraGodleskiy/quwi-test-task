@@ -1,11 +1,10 @@
 .projects-section {
   width: 100%;
-  height: calc(100vh - 45px);
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 10px;
-  @include slide-animation(0,100vh, 0.5s, login-form);
+  @include slide-animation(100vw,0, 0.3s, login-form);
 }
 .project-item {
   margin: 5px 0;

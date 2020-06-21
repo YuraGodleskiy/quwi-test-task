@@ -7,11 +7,11 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 2%;
-  @include slide-animation(0, -100%, 1s, navbar);
+  @include slide-animation(0, -100%, .3s, navbar);
   &__logo {
     width: 25px;
     margin: 10px 0;
-    @include slide-animation(-200%, 0, 1.5s, logo);
+    @include slide-animation(-200%, 0, .3s, logo);
   }
   &__btn {
     background: transparent;
@@ -27,5 +27,5 @@
   }
 }
 .navbar-btns {
-  @include slide-animation(200%, 0, 1.5s, navbar-btns);
+  @include slide-animation(200%, 0, .3s, navbar-btns);
 }
