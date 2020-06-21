@@ -6,3 +6,9 @@
   justify-content: center;
   align-items: center;
 }
+.edit-form {
+  &__input-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
