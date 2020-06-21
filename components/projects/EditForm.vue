@@ -84,12 +84,8 @@ export default {
   },
   async created () {
     await this.getProjects()
-    // eslint-disable-next-line camelcase
     const item = await this.projects.find(item => item.id === +this.id)
     this.form = { ...item }
-    // this.form.name = name
-    // // eslint-disable-next-line camelcase
-    // this.form.logo = logo_url
   },
   methods: {
     ...mapActions({
