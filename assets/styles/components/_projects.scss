@@ -1,0 +1,48 @@
+.projects-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+  @include slide-animation(100vw,0, 0.3s, login-form);
+}
+.project-item {
+  margin: 5px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: $white;
+  border: 1px solid $grey;
+  border-radius: 3px;
+  padding: 25px;
+  text-decoration: none;
+  color: $black;
+  @include breakpoint-min(sm) {
+    flex-direction: row;
+  }
+  &__logo {
+    width: 40px;
+  }
+  &__title {
+    margin: 0;
+    width: 120px;
+    text-align: center;
+    @include breakpoint-min(sm) {
+      text-align: left;
+      margin: 0 0 0 20px;
+    }
+  }
+  &__active-mark {
+    margin: 20px 70px;
+  }
+  &__time-info {
+    width: 140px;
+    display: flex;
+    flex-direction: column;
+    & div {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}

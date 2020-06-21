@@ -1,65 +1,41 @@
 <template>
-  <section class="container">
-    <div>
-      <app-logo/>
-      <h1 class="title">
-        quwi-test-task
-      </h1>
-      <h2 class="subtitle">
-        Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
-      </div>
-    </div>
+  <section class="projects-section">
+    <ProjectItem
+      v-for="item in projects"
+      :key="item.id"
+      :logo="item.logo_url"
+      :title="item.name"
+      :is-active="!!item.is_active"
+      :spent-time-week="item.spent_time_week"
+      :spent-time-month="item.spent_time_month"
+      :spent-time-all="item.spent_time_all"
+      :id="item.id"
+    />
   </section>
 </template>
 
 <script>
-import AppLogo from '~/components/AppLogo.vue'
-
+import { mapState, mapActions } from 'vuex'
+import ProjectItem from '@/components/projects/ProjectItem'
 export default {
+  middleware: 'redirectToLogin',
   components: {
-    AppLogo
+    ProjectItem
+  },
+  data: () => ({
+  }),
+  computed: {
+    ...mapState({
+      projects: state => state.projects.projects
+    })
+  },
+  created () {
+    this.getProjects()
+  },
+  methods: {
+    ...mapActions({
+      getProjects: 'projects/getProjects'
+    })
   }
 }
 </script>
-
-<style>
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-</style>
-

@@ -1,0 +1,14 @@
+.edit-section {
+  width: 100%;
+  min-height: calc(100vh - 45px);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.edit-form {
+  &__input-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

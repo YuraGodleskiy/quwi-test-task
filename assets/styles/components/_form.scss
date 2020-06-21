@@ -1,0 +1,70 @@
+.form {
+  width: 100%;
+  max-width: 350px;
+  margin: 0 10px;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  transition: 250ms;
+  &:hover {
+    box-shadow: 0 0 7px 0 rgba(0,0,0,0.2);
+  }
+  @include slide-animation(0,100vh, 0s, form);
+  @include breakpoint-min(sm) {
+    margin: 0;
+    justify-content: flex-start;
+  }
+  &__logo {
+    margin: 20px auto;
+    border-radius: 50%;
+    width: 50px;
+  }
+  &__title {
+    margin: 10px 0;
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+  &__text-field {
+    width: 100%;
+    margin: 7px 0;
+    border-radius: 2px;
+    border: 1px solid $dark-grey;
+    padding: 10px 10px;
+    font-size: 16px;
+  }
+  &__btn {
+    cursor: pointer;
+    margin: 20px 0;
+    background: $dark-blue;
+    color: $white;
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: 10px 20px;
+    font-weight: bold;
+    transition: 250ms;
+    &:hover {
+      background: #447ba8;
+    }
+  }
+  &__input-wrapper {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__notification {
+    width: 100%;
+    text-align: center;
+  }
+  &__error {
+    color: $red;
+    width: 100%;
+    text-align: center;
+    margin: 10px 0 0 0;
+  }
+}
