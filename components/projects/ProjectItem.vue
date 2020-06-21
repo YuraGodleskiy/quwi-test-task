@@ -8,30 +8,30 @@
       {{ isActiveRes }}
     </b>
     <div class="project-item__time-info">
-      <p>
+      <div>
         <span>
           time this week
         </span>
         <b>
           {{ spentTimeWeek }}
         </b>
-      </p>
-      <p>
+      </div>
+      <div>
         <span>
           this month
         </span>
         <b>
           {{ spentTimeMonth }}
         </b>
-      </p>
-      <p>
+      </div>
+      <div>
         <span>
           total
         </span>
         <b>
           {{ spentTimeAll }}
         </b>
-      </p>
+      </div>
     </div>
   </div>
 </template>
